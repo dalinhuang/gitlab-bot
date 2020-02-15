@@ -35,7 +35,7 @@ Gitlab pipeline 流水线
 
 ## 应用部署运行
 
-应用通过环境变量添加机器人webhook地址，`WEBHOOK_URL_`作为前缀，后面可接不同的推送组。
+应用通过环境变量添加机器人webhook地址，`WEBHOOK_URL_`作为前缀，后面可接不同的推送组。使用推送组可以将消息推送到不同的群组机器人。
 
 如环境变量`WEBHOOK_URL_PROJ`，`PROJ`则为推送组。推送组用于与`Gitlab`的集成时使用。
 
@@ -45,7 +45,7 @@ Gitlab pipeline 流水线
 
 则环境变量设为：
 ```
-WEBHOOK_URL_QYWX=https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=ABCDEFG
+WEBHOOK_URL_PROJ=https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=ABCDEFG
 ```
 
 一个应用可以添加多个推送组。
@@ -78,7 +78,7 @@ URL填写服务的地址和端口号+推送组。
 
 例如，服务器地址为：https://192.168.100.100:7001，推送组为PROJ。
 
-URL填写：https://192.168.100.100:7001/proj
+URL填写：https://192.168.100.100:7001/proj （不区分大小写）
 
 具体设置，参见下图：
 
