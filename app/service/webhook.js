@@ -86,7 +86,7 @@ class WebhookService extends Service {
       op = '将代码推至'
     }
 
-    content.push(`\`${user_name}\`${op}[[${path_with_namespace}/${branch}](${web_url}/tree/${branch})]。`)
+    content.push(` ${user_name} ${op}[[${path_with_namespace}/${branch}](${web_url}/tree/${branch})]。`)
     content.push(`> 项目 [[${projName} | ${path_with_namespace}](${web_url})]\n`)
     total_commits_count && content.push(`**共提交${total_commits_count}次：**\n`)
     total_commits_count && content.push(this.generateListItem('', this.formatCommits(commits).text));
@@ -134,7 +134,7 @@ class WebhookService extends Service {
     content.push(`> 项目 [[${projName} | ${path_with_namespace}](${web_url})]\n`)
     content.push('**流水线详情：**\n')
 
-    name && content.push(this.generateListItem('操作人', `\`${name}\``))
+    name && content.push(this.generateListItem('操作人', `${name}`))
 
     duration && content.push(this.generateListItem('总耗时', `${this.formatDuration(duration)}`))
     !_.isEmpty(stages) && content.push(this.generateListItem(`共${stages.length}个阶段`, `${stages.join(' / ')}`))
